@@ -30,7 +30,11 @@ const Main = () => {
       <div className='w-full h-full '>
         <div className='absolute w-full h-[550px] bg-gradient-to-b from-black'></div>
         <div className='absolute w-full h-[550px] bg-black opacity-30'></div>
-        <img className='w-full h-full object-cover' src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} alt={movie?.title} />
+        
+        <img className='w-full h-full object-cover' 
+        src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} 
+        alt={movie?.title} />
+        
         <div className='absolute w-full top-[20%] p-4 md:p-8'>
           <h1 className='text-3xl md:text-4xl font-bold'>
             {movie?.title}</h1>
