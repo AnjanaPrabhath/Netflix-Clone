@@ -37,6 +37,7 @@ const Row = ({title, fetchURL, rowID}) => {
 
             {/* row component */}
 
+            {/* left icon */}
             <MdChevronLeft 
             onClick={slideLeft}
             size={30} 
@@ -51,6 +52,7 @@ const Row = ({title, fetchURL, rowID}) => {
 
             </div>
 
+            {/* right icon */}
             <MdChevronRight 
             onClick={slideRight}
             size={30} 
