@@ -28,7 +28,7 @@ const Main = () => {
 
 
   return (
-    <div className='w-full h-[550px] text-white'>
+    <div className='w-full h-[550px] text-white pb-4'>
 
       <div className='w-full h-full '>
 
