@@ -19,6 +19,28 @@ export function AuthContextProvider({children}){
         return createUserWithEmailAndPassword(auth,email,password)
     }
 
+    // signIn
+
+    function logIn(email, password){
+        return signInWithEmailAndPassword (auth, email, password)
+    }
+
+    // logOut
+
+    function logOut(){
+        return (auth)
+    }
+
+    useEffect(()=> {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser)=>{
+            setUser(currentUser);
+        });
+
+        return()=> {
+            unsubscribe();
+        };
+    });
+
     return(
         <AuthContext.Provider value={{signUp, user}}>
             {children}
