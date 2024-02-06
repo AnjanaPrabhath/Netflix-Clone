@@ -1,3 +1,5 @@
+// this is the firebase connecting page
+
 import {createContext, useContext, useEffect, useState} from "react"
 import { Auth, auth } from "../firebase"
 import {
@@ -28,7 +30,7 @@ export function AuthContextProvider({children}){
     // logOut
 
     function logOut(){
-        return (auth)
+        return signOut(auth)
     }
 
     useEffect(()=> {
@@ -42,7 +44,7 @@ export function AuthContextProvider({children}){
     });
 
     return(
-        <AuthContext.Provider value={{signUp, user}}>
+        <AuthContext.Provider value={{signUp, logIn, logOut, user}}>
             {children}
         </AuthContext.Provider>
     )
