@@ -14,11 +14,18 @@ const SignUp = () => {
             {/* login form background */}
             <div className='fixed w-full px-4 py-24 z-50'>
                 <div className='max-w-[400px] h-[500px] mx-auto bg-black/75 text-white rounded-lg'>
-                    <div className='max-w-[320px] mx-auto py-6'>
+                    <div className='max-w-[320px] mx-auto py-6'> 
                         <h1 className='text-center font-bold text-2xl'>SignUp</h1>
-                        <form>
-                            <input type="email"/>
-                            <input type="password"/>
+                        <form className='w-full flex flex-col py-4'>
+                            <input className='py-3 my-2 bg-gray-700 rounded-md px-4' type="email" placeholder='email' autoComplete='email'/>
+                            <input className='py-3 my-2 bg-gray-700 rounded-md px-4' type="password" placeholder='password' autoComplete='current-password'/>
+
+                            <button className='bg-red-600 font-bold items-center rounded-md py-3 mt-4'>SignUp</button>
+
+                            <div>
+                                <p><input type="checkbox"/> remember me</p>
+                                <p>forgot password</p>
+                            </div>
                         </form>
 
                     </div>
