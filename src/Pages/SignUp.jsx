@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import BgImage from '../assets/Netflix-background_login.jpg'
 import { Link } from 'react-router-dom'
+import { UserAuth } from '../context/AuthContext'
 
 const SignUp = () => {
+
+    const[email, setEmail] = useState('')
+
+    const[password, setPassword] = useState('')
+
+    const {user, signUp} = UserAuth()
+
+    const handleSubmit = async (e)=>{
+        e.preventDefault()
+        try {
+           await signUp(email, password) 
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
   return (
     <>
         <div className='w-full h-screen'>
@@ -16,10 +33,25 @@ const SignUp = () => {
             <div className='fixed w-full px-4 py-24 z-50'>
                 <div className='max-w-[400px] h-[500px] mx-auto bg-black/75 text-white rounded-lg'>
                     <div className='max-w-[320px] mx-auto py-16'> 
+                        
                         <h1 className='text-center font-bold text-2xl'>SignUp</h1>
-                        <form className='w-full flex flex-col py-4'>
-                            <input className='py-3 my-2 bg-gray-700 rounded-md px-4' type="email" placeholder='email' autoComplete='email'/>
-                            <input className='py-3 my-2 bg-gray-700 rounded-md px-4' type="password" placeholder='password' autoComplete='current-password'/>
+                        
+                        <form 
+                        onSubmit={handleSubmit} 
+                        className='w-full flex flex-col py-4'>
+                            <input 
+                            onChange={(e) => setEmail(e.target.value)}
+                            className='py-3 my-2 bg-gray-700 rounded-md px-4' 
+                            type="email" 
+                            placeholder='email' 
+                            autoComplete='email'/>
+
+                            <input 
+                            onChange={(e) => setPassword(e.target.value)}
+                            className='py-3 my-2 bg-gray-700 rounded-md px-4' 
+                            type="password" 
+                            placeholder='password' 
+                            autoComplete='current-password'/>
 
                             <button className='bg-red-600 font-bold items-center text-2xl rounded-md py-2 my-4'>SignUp</button>
 
