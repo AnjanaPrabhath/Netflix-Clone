@@ -56,7 +56,7 @@ const Main = () => {
           </div>
 
           <p className='text-gray-300 text-sm pb-2'>
-            Released : {movie?.release_date}</p>
+            Released Date : {movie?.release_date}</p>
           <p className='text-sm text-gray-300 w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%]'>
             {trunkateString(movie?.overview, 200)}</p>
 
